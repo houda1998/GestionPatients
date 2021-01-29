@@ -4,8 +4,8 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import org.sid.dao.PatientRepository;
-import org.sid.entities.Patient;
+import org.sid.DAO.PatientRepository;
+import org.sid.ENTITIES.Patient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;

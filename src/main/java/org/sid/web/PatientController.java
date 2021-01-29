@@ -5,8 +5,8 @@ import java.util.List;
 
 import javax.validation.Valid;
 
-import org.sid.dao.PatientRepository;
-import org.sid.entities.Patient;
+import org.sid.DAO.PatientRepository;
+import org.sid.ENTITIES.Patient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -25,7 +25,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class PatientController {
 	@Autowired
 	private PatientRepository patientRepository;
-	@GetMapping(path="/index")
+	@GetMapping(path="/")
 public String index() {
 	return "index";
 }

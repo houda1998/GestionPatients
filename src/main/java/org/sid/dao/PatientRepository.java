@@ -1,7 +1,7 @@
-package org.sid.dao;
+package org.sid.DAO;
 
 
-import org.sid.entities.Patient;
+import org.sid.ENTITIES.Patient;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
