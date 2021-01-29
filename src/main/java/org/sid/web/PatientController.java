@@ -26,7 +26,19 @@ public class PatientController {
 	@Autowired
 	private PatientRepository patientRepository;
 	@GetMapping(path="/")
-public String index() {
+	
+public String index(Model model,	  
+		@RequestParam(name="page",defaultValue="0")int page,
+		@RequestParam(name="size",defaultValue = "5")int size,
+		@RequestParam(name="motCle",defaultValue = "")String motCle) {
+		Page<Patient>pagepatients=patientRepository.
+				   findByNameContains(motCle, PageRequest.of(page, size));
+		   model.addAttribute("pagePatients",pagepatients);
+		   model.addAttribute("currentPage", page);
+		   model.addAttribute("size", size);
+		   model.addAttribute("motCle", motCle);
+		   model.addAttribute("pages",new int[pagepatients.getTotalPages()]);	
+		   System.out.println(pagepatients.getTotalPages());
 	return "index";
 }
    @GetMapping(path="/patients")
